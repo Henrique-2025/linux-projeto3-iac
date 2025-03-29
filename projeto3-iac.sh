@@ -29,4 +29,7 @@ sudo cp index.php /var/lib/docker/volumes/app/_data/
 #Criando um Swarm
 sudo docker swarm init | tee /tmp/log_swarm.txt
 
+echo "/var/lib/docker/volumes/app/_data/ *(rw,sync,subtree_check)" >> /etc/exports
+exportfs -ar
+
 #Ingressar as máquinas no grupo com o token e executar a segunda parte do projeto3.
